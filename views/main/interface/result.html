@@ -1,0 +1,33 @@
+<h2 class="sub-header">用例运行结果</h2>
+
+<div class="panel panel-default">
+    <div class="panel-body">
+        <div class="table-responsive">
+            <table class="table table-hover table-bordered">
+                <thead>
+                <tr>
+                    <th>编号</th>
+                    <th>测试用例名</th>
+                    <th>测试用例描述</th>
+                    <th>运行结果</th>
+                    <th>错误信息反馈</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="result in results">
+                    <td ng-bind="result.number"></td>
+                    <td ng-bind="result.name"></td>
+                    <td ng-bind="result.describe"></td>
+
+                    <td ng-if="result.status == '成功'" class="text-success"><span class="glyphicon glyphicon-ok"></span>&nbsp;{{result.status}}</td>
+                    <td ng-if="result.status == '异常'" class="text-danger"><span class="glyphicon glyphicon-remove"></span>&nbsp;{{result.status}}</td>
+
+                    <td ng-bind="result.feedback"></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <a class="btn btn-default pull-right" ui-sref="index.interface"><span class="glyphicon glyphicon-step-backward"></span>&nbsp;&nbsp;返回</a>
+    </div>
+</div>

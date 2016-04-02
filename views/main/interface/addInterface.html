@@ -1,0 +1,229 @@
+<h2 class="sub-header">增加接口</h2>
+<!--  预处理版块   -->
+<div class="prepare" ng-if="step < 4">
+    <h3 class="text-center"><span class="glyphicon glyphicon-chevron-right"></span>&nbsp;预处理:Prepare</h3>
+    <ul class="list-group">
+        <li class="list-group-item" ng-if="step == 1">
+            <h4><span class="glyphicon glyphicon-flag"></span>&nbsp;步骤一：填写接口地址与请求方法</h4>
+            <div class="form-horizontal form-group-sm">
+                <div class="form-group">
+                    <label  class="col-sm-4 control-label">接口地址:</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" placeholder="URL" ng-model="formStepOne.interfaceURL">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label  class="col-sm-4 control-label">请求方法:</label>
+                    <div class="col-sm-6">
+                        <div class="checkbox">
+                            <label>
+                                <input name="methodRadio" type="radio" value="post" ng-model="formStepOne.interfaceMethod"> post
+                            </label>
+                            <label>
+                                <input name="methodRadio" type="radio" value="get" ng-model="formStepOne.interfaceMethod"> get
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-6 col-sm-offset-4">
+                        <button class="btn btn-group-lg btn-info" ng-click="NextStep(2,'submitOne');" ng-disabled="!(formStepOne.interfaceURL&&formStepOne.interfaceMethod)">下一步&nbsp;&nbsp;<span class="glyphicon glyphicon-arrow-right"></span></button>
+                        <button class="btn btn-group-lg btn-warning" ng-click="NextStep(4);">跳过预处理步骤过程(直接进入处理)&nbsp;&nbsp;<span class="glyphicon glyphicon-send"></span></button>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li class="list-group-item" ng-if="step == 2">
+            <h4><span class="glyphicon glyphicon-flag"></span><span class="glyphicon glyphicon-flag"></span>&nbsp;步骤二：填写接口参数</h4>
+            <div class="form-horizontal form-group-sm params-wrap">
+                <div class="form-group">
+                    <label  class="col-sm-4 control-label">接口参数名称:</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" placeholder="name" ng-model="formStepTwo.paraName">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label  class="col-sm-4 control-label">接口参数值:</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" placeholder="value" ng-model="formStepTwo.paraVal">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label  class="col-sm-4 control-label">是否需要加密:</label>
+                    <div class="col-sm-6">
+                        <div class="checkbox">
+                            <label>
+                                <input name="encodeRadio" type="radio" ng-model="formStepTwo.encode"> 是
+                            </label>
+                            <label>
+                                <input name="encodeRadio" type="radio" ng-model="formStepTwo.encode"> 否
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-6 col-sm-offset-4">
+                        <button class="btn btn-group-lg btn-info" ng-click="NextStep(3,'submitTwo');">下一步&nbsp;&nbsp;<span class="glyphicon glyphicon-arrow-right"></span></button>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li class="list-group-item" ng-if="step == 3">
+            <h4><span class="glyphicon glyphicon-flag"></span><span class="glyphicon glyphicon-flag"></span><span class="glyphicon glyphicon-flag"></span>&nbsp;步骤三：填写预期结果</h4>
+            <div class="form-horizontal form-group-sm">
+                <div class="form-group">
+                    <label  class="col-sm-4 control-label"><span class="glyphicon glyphicon-tag"></span>&nbsp;预期响应头</label>
+                </div>
+                <div class="form-group">
+                    <label  class="col-sm-4 control-label">状态码:</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" placeholder="status">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label  class="col-sm-4 control-label">重定向地址:</label>
+                    <div class="col-sm-6">
+                        <input type="url" class="form-control" placeholder="location">
+                    </div>
+                </div>
+                <hr/>
+                <div class="form-group">
+                    <label  class="col-sm-4 control-label"><span class="glyphicon glyphicon-tag"></span>&nbsp;预期响应内容</label>
+                </div>
+                <div class="form-group">
+                    <label  class="col-sm-4 control-label">Code:</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" placeholder="Code">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label  class="col-sm-4 control-label">Message:</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" placeholder="Message">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-sm-6 col-sm-offset-4">
+                        <button class="btn btn-group-lg btn-info" ng-click="NextStep(4,'submitThr');">下一步&nbsp;&nbsp;<span class="glyphicon glyphicon-arrow-right"></span></button>
+                    </div>
+                </div>
+            </div>
+        </li>
+    </ul>
+</div>
+
+
+<!--  处理版块  -->
+<div class="process" ng-if="step >= 4">
+    <h3 class="text-center"><span class="glyphicon glyphicon-chevron-right"></span>&nbsp; 处理:Process</h3>
+    <ul class="list-group">
+        <li class="list-group-item" ng-if="step == 4">
+            <h4><span class="glyphicon glyphicon-flag"></span>&nbsp;步骤一：填写接口地址与请求方法</h4>
+            <div class="form-horizontal form-group-sm">
+                <div class="form-group">
+                    <label  class="col-sm-4 control-label">接口地址:</label>
+                    <div class="col-sm-6">
+                        <input type="url" class="form-control" placeholder="URL">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label  class="col-sm-4 control-label">请求方法:</label>
+                    <div class="col-sm-6">
+                        <div class="checkbox">
+                            <label>
+                                <input name="methodRadio" type="radio" value="post"> post
+                            </label>
+                            <label>
+                                <input name="methodRadio" type="radio" value="get"> get
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-6 col-sm-offset-4">
+                        <button class="btn btn-group-lg btn-info" ng-click="NextStep(5,'submitFor');">下一步&nbsp;&nbsp;<span class="glyphicon glyphicon-arrow-right"></span></button>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li class="list-group-item" ng-if="step == 5">
+            <h4><span class="glyphicon glyphicon-flag"></span><span class="glyphicon glyphicon-flag"></span>&nbsp;步骤二：填写接口参数</h4>
+            <div class="form-horizontal form-group-sm">
+                <div class="form-group">
+                    <label  class="col-sm-4 control-label">接口参数名称:</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" placeholder="name">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label  class="col-sm-4 control-label">接口参数值:</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" placeholder="value">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label  class="col-sm-4 control-label">是否需要加密:</label>
+                    <div class="col-sm-6">
+                        <div class="checkbox">
+                            <label>
+                                <input name="encodeRadio" type="radio"> 是
+                            </label>
+                            <label>
+                                <input name="encodeRadio" type="radio"> 否
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-6 col-sm-offset-4">
+                        <button class="btn btn-group-lg btn-info" ng-click="NextStep(6,'submitFiv');">下一步&nbsp;&nbsp;<span class="glyphicon glyphicon-arrow-right"></span></button>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li class="list-group-item" ng-if="step == 6">
+            <h4><span class="glyphicon glyphicon-flag"></span><span class="glyphicon glyphicon-flag"></span><span class="glyphicon glyphicon-flag"></span>&nbsp;步骤三：填写预期结果</h4>
+            <div class="form-horizontal form-group-sm">
+                <div class="form-group">
+                    <label  class="col-sm-4 control-label"><span class="glyphicon glyphicon-tag"></span>&nbsp;预期响应头</label>
+                </div>
+                <div class="form-group">
+                    <label  class="col-sm-4 control-label">状态码:</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" placeholder="status">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label  class="col-sm-4 control-label">重定向地址:</label>
+                    <div class="col-sm-6">
+                        <input type="url" class="form-control" placeholder="location">
+                    </div>
+                </div>
+                <hr/>
+                <div class="form-group">
+                    <label  class="col-sm-4 control-label"><span class="glyphicon glyphicon-tag"></span>&nbsp;预期响应内容</label>
+                </div>
+                <div class="form-group">
+                    <label  class="col-sm-4 control-label">Code:</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" placeholder="Code">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label  class="col-sm-4 control-label">Message:</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" placeholder="Message">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-sm-6 col-sm-offset-4">
+                        <button class="btn btn-group-lg btn-primary" ng-click="submitFinal()"><span class="glyphicon glyphicon-ok"></span>&nbsp;&nbsp;提交</button>
+                        <a class="btn btn-group-lg btn-default" ng-click="NextStep(1);"><span class="glyphicon glyphicon-repeat"></span>&nbsp;&nbsp;再添加一个case</a>
+                    </div>
+                </div>
+            </div>
+        </li>
+    </ul>
+</div>

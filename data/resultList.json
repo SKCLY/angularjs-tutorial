@@ -1,0 +1,24 @@
+[
+  {
+    "id":"12xc",
+    "name":"后台登陆用例",
+    "number":1,
+    "describe":"是个好的测试",
+    "status":"成功",
+    "feedback":"null"
+  },{
+  "id":"dd67",
+  "name":"商品详情用例",
+  "number":2,
+  "describe":"是个好的测试",
+  "status":"异常",
+  "feedback":"NumberFormatException"
+},{
+  "id":"3dde",
+  "name":"参数详细信息用例",
+  "number":3,
+  "describe":"是个好的测试",
+  "status":"成功",
+  "feedback":"null"
+}
+]

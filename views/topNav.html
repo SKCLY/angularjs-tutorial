@@ -1,0 +1,29 @@
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">图书馆后台管理系统</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-left">
+                <li ng-class="{active:home}"><a ui-sref="index">首页</a></li>
+                <li ng-class="{active:basicData}"><a ui-sref="index.basicData">基础数据</a></li>
+                <li ng-class="{active:promotion}"><a ui-sref="index.promotion">促销中心</a></li>
+                <li ng-class="{active:business}"><a ui-sref="index.business">商家管理</a></li>
+                <li ng-class="{active:commodity}"><a ui-sref="index.commodity">商品管理</a></li>
+                <li ng-class="{active:interface}"><a ui-sref="index.interface">接口测试</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#"><span class="glyphicon glyphicon-off"></span>&nbsp;退出</a></li>
+            </ul>
+            <form class="navbar-form navbar-right">
+                <input type="text" class="form-control" placeholder="search...">
+            </form>
+        </div>
+    </div>
+</nav>
