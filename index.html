@@ -1,61 +1,93 @@
 <!DOCTYPE html>
-<html lang="en-us">
+<html>
   <head>
-    <meta charset="UTF-8">
-    <title>Angularjs-tutorial by TuringJS</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
     <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <title>Angularjs-tutorial by TuringJS</title>
   </head>
+
   <body>
-    <section class="page-header">
-      <h1 class="project-name">Angularjs-tutorial</h1>
-      <h2 class="project-tagline">一本全面的angularjs入门教程，除了基本的angualr知识以外，还包含ui-router、公共服务注入等高级阶段知识，欢迎在线交流...</h2>
-      <a href="https://github.com/TuringJS/angularjs-tutorial" class="btn">View on GitHub</a>
-      <a href="https://github.com/TuringJS/angularjs-tutorial/zipball/master" class="btn">Download .zip</a>
-      <a href="https://github.com/TuringJS/angularjs-tutorial/tarball/master" class="btn">Download .tar.gz</a>
-    </section>
+    <header>
+      <div class="inner">
+        <h1>Angularjs-tutorial</h1>
+        <h2>一份不全面的AngularJS入门到精通教程，一段曲折的开源之路，一个奇妙的全栈世界，从此一发不可收拾...</h2>
+        <a href="https://github.com/TuringJS/angularjs-tutorial" class="button"><small>View project on</small> GitHub</a>
+      </div>
+    </header>
 
-    <section class="main-content">
-      <h3>
-<a id="欢迎来到anguarjs大世界我是93后布道师陈果花名过儿" class="anchor" href="#%E6%AC%A2%E8%BF%8E%E6%9D%A5%E5%88%B0anguarjs%E5%A4%A7%E4%B8%96%E7%95%8C%E6%88%91%E6%98%AF93%E5%90%8E%E5%B8%83%E9%81%93%E5%B8%88%E9%99%88%E6%9E%9C%E8%8A%B1%E5%90%8D%E8%BF%87%E5%84%BF" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>欢迎来到anguarjs大世界，我是93后布道师陈果，花名过儿.</h3>
+    <div id="content-wrapper">
+      <div class="inner clearfix">
+        <section id="main-content">
+          <h3>
+<a id="欢迎来到全栈大世界" class="anchor" href="#%E6%AC%A2%E8%BF%8E%E6%9D%A5%E5%88%B0%E5%85%A8%E6%A0%88%E5%A4%A7%E4%B8%96%E7%95%8C" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>欢迎来到全栈大世界</h3>
 
-<p>这是</p>
-
-<h3>
-<a id="angularjs是啥" class="anchor" href="#angularjs%E6%98%AF%E5%95%A5" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>angularjs是啥？</h3>
-
-<p>是</p>
+<pre><code>这不是一份教你Hello world的码农界经典入门教程，也不是一份全面的像官方API一样的手册，也不是一本学完就保证你能盖起摩天大楼一样的web app的葵花宝典，这是一篇旨在用人话帮助小白们打通任督二脉、清除开发之路上的雾霾并且在全栈之路上愉快前行的通而不俗的博客。
+</code></pre>
 
 <h3>
-<a id="angulajs和jquery啥的有什么关系" class="anchor" href="#angulajs%E5%92%8Cjquery%E5%95%A5%E7%9A%84%E6%9C%89%E4%BB%80%E4%B9%88%E5%85%B3%E7%B3%BB" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>angulajs和jquery啥的有什么关系？</h3>
+<a id="angularjs是啥" class="anchor" href="#angularjs%E6%98%AF%E5%95%A5" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>AngularJS是啥？</h3>
 
-<p>是</p>
+<pre><code>在我的学习观念里，不论学习一门怎样的新技术，最重要的一步永远都是先搞清楚它是什么，这样我们才知道为什么学习以及怎样高效的学习它.那么angularjs是啥呢，你大可去网上随便百度谷歌，会有一大堆的关于angular的介绍，但正如我初学时一样，我不希望被那些千篇一律的听不懂的话弄得晕头转向，从而丧失学习的兴趣，知识本身都是很有趣很有意义的，很多时候只是因为学习方式不对而令自己早早的丧失了学习的兴趣，这很可惜。那么angular到底是什么呢，google官方给出的定义是“Superheroic JavaScript MVW Framework”、“HTML enhanced for web apps”，翻译成人话大概就是“angularjs是一个能够帮助我们在开发web app的时候大大增强html的功能的超级无敌js框架”，还是懵逼脸？没关系，慢慢来。不必花费宝贵的时间在理解定义上，我们要弄懂的是知识本身而不是知识的定义。angularjs其实就是一个用javascript开发出来的框架，它能够在我们开发有大量交互（包括数据和界面）的web app的时候为我们提供非常强有力的帮助。举个最简单的栗子，如果你有五年开发经验的话，你肯定有过这样的经历：你要提交一个form表单，但为了迎合趋势，你不想用传统form表单提交，因为那会自动刷新页面，体验太差太土，于是你也开始用ajax提交，但这样的话，你得在js里（不管是原生还是jquery之类的前端框架）写一堆类似$(".J-name").val("")之类的代码获取你想提交的表单项的值，然后再把他们封装成一个json对象，用ajax的方式提交给后台，各位未来的大神们，你们不觉得这种方式很烦吗。
+</code></pre>
 
 <h3>
-<a id="什么是mvc" class="anchor" href="#%E4%BB%80%E4%B9%88%E6%98%AFmvc" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>什么是MVC？</h3>
+<a id="angularjs和jquery啥的有什么关系" class="anchor" href="#angularjs%E5%92%8Cjquery%E5%95%A5%E7%9A%84%E6%9C%89%E4%BB%80%E4%B9%88%E5%85%B3%E7%B3%BB" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>AngularJS和jquery啥的有什么关系？</h3>
 
-<p>是</p>
+<p>有毛关系！唯一的共同点是他们都是javascript框架！</p>
+
+<h3>
+<a id="什么是mvw" class="anchor" href="#%E4%BB%80%E4%B9%88%E6%98%AFmvw" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>什么是MVW？</h3>
+
+<p>M：模型（数据模型），V：视图；W：whatever。</p>
 
 <h3>
 <a id="what-are-you-弄啥嘞前端也有mvc" class="anchor" href="#what-are-you-%E5%BC%84%E5%95%A5%E5%98%9E%E5%89%8D%E7%AB%AF%E4%B9%9F%E6%9C%89mvc" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>what are you 弄啥嘞，前端也有MVC？</h3>
 
-<p>是</p>
+<p>什么鬼？前端也有MVC？你TM在逗我？相信不少童鞋听说前端里也有MVC的概念的时候，就像听人说传媒也有搞计算机的一样惊奇。</p>
 
 <h3>
-<a id="咋学angulrjs" class="anchor" href="#%E5%92%8B%E5%AD%A6angulrjs" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>咋学angulrjs?</h3>
+<a id="咋学angularjs" class="anchor" href="#%E5%92%8B%E5%AD%A6angularjs" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>咋学AngularJS?</h3>
 
-<p>是</p>
+<p>毛主席说，实践是检验真理的唯一标准，所以，边看理论边实践去吧。
+理论的话，不推荐一上来就直接看官方API，可以买本书，然后跟着书慢慢写一些实例，遇到不懂得再去查API，最后可以把我的项目当一个综合实例（麻雀虽小，五脏俱全），可以在我的项目之上进行修改和拓展，最终你会成为大神。</p>
 
-      <footer class="site-footer">
-        <span class="site-footer-owner"><a href="https://github.com/TuringJS/angularjs-tutorial">Angularjs-tutorial</a> is maintained by <a href="https://github.com/TuringJS">TuringJS</a>.</span>
+<h3>
+<a id="咋运行你这个项目" class="anchor" href="#%E5%92%8B%E8%BF%90%E8%A1%8C%E4%BD%A0%E8%BF%99%E4%B8%AA%E9%A1%B9%E7%9B%AE" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>咋运行你这个项目？</h3>
 
-        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
-      </footer>
+<p>请先自行安装nodejs（如果node都不会安装，请自行放弃治疗）,然后npm install http-server,安装完成之后到项目根目录下用命令行运行http-server,成功之后在浏览器输入127.0.0.1:8080或者你的IP地址便可访问。（当然，也可以用其他方式创建一个本地服务器）</p>
 
-    </section>
+<h3>
+<a id="我是谁" class="anchor" href="#%E6%88%91%E6%98%AF%E8%B0%81" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>我是谁？</h3>
+
+<p>我是谁不重要，开源社会最重要！好吧，我只是一名93后菜鸟级全栈工程师，大家多多交流，科技世界，有开源才有发展！欢迎到GitHub上交流.</p>
+        </section>
+
+        <aside id="sidebar">
+          <a href="https://github.com/TuringJS/angularjs-tutorial/zipball/master" class="button">
+            <small>Download</small>
+            .zip file
+          </a>
+          <a href="https://github.com/TuringJS/angularjs-tutorial/tarball/master" class="button">
+            <small>Download</small>
+            .tar.gz file
+          </a>
+
+          <p class="repo-owner"><a href="https://github.com/TuringJS/angularjs-tutorial"></a> is maintained by <a href="https://github.com/TuringJS">TuringJS</a>.</p>
+
+          <p>This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
+        </aside>
+      </div>
+    </div>
 
   
   </body>
